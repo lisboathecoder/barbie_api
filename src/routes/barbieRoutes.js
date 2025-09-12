@@ -1,20 +1,11 @@
-const barbies = [
-    {
-        id: 1,
-        nome: "Barbie Princesa",
-        profissao: "Princesa",
-        anoLancamento: 2001,
-    },
-    {   id: 2, 
-        nome: "Barbie Doutora", 
-        profissao: "Médica", 
-        anoLancamento: 2005 },
-    {
-        id: 3,
-        nome: "Barbie Programadora",
-        profissao: "Desenvolvedora",
-        anoLancamento: 2020,
-    },
-];
+import { getBarbieById, getAllBarbies, createBarbie, deleteBarbie } from "../controllers/barbieController.js";
+import express from "express"
 
-export default { barbies };
+const router = express.Router();
+
+router.get("/", getAllBarbies);
+router.get("/:id", getBarbieById);
+router.post("/", createBarbie);
+router.delete("/:id", deleteBarbie);
+
+export default router;
