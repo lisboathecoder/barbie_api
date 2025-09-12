@@ -1,0 +1,1 @@
+import barbies from "../models/dados.js"
